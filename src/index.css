@@ -1,0 +1,204 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 29 80% 52%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 214 85% 16%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 29 80% 52%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 214 85% 16%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-f1-light text-foreground;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+  }
+  
+  html {
+    @apply scroll-smooth;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+  
+  a {
+    @apply transition-colors duration-200;
+  }
+  
+  button {
+    @apply transition-all duration-200;
+  }
+}
+
+.f1-card {
+  @apply rounded-xl border border-f1-gray shadow-sm overflow-hidden transition-all hover:shadow-md;
+}
+
+.f1-card-navy {
+  @apply bg-f1-navy text-white rounded-xl border border-f1-gray shadow-sm overflow-hidden transition-all hover:shadow-md;
+}
+
+.pulse-slow {
+  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Animations */
+.hover-scale {
+  @apply transition-transform duration-200 hover:scale-105;
+}
+
+.zoom-on-hover {
+  @apply overflow-hidden;
+}
+
+.zoom-on-hover img {
+  @apply transition-transform duration-500 ease-in-out;
+}
+
+.zoom-on-hover:hover img {
+  @apply scale-110;
+}
+
+/* Text animations */
+.text-gradient {
+  @apply bg-gradient-to-br from-f1-orange via-f1-orange to-yellow-500 bg-clip-text text-transparent;
+}
+
+/* Breadcrumb styling */
+.breadcrumb {
+  @apply flex items-center text-sm text-gray-600;
+}
+
+.breadcrumb a {
+  @apply hover:text-f1-orange transition-colors;
+}
+
+.breadcrumb-separator {
+  @apply mx-2 text-gray-400;
+}
+
+/* Button styling */
+.f1-button {
+  @apply px-4 py-2 rounded-md font-medium transition-all duration-200;
+}
+
+.f1-button-primary {
+  @apply bg-f1-orange text-white hover:bg-f1-orange/90;
+}
+
+.f1-button-secondary {
+  @apply bg-f1-navy text-white hover:bg-f1-navy/90;
+}
+
+.f1-button-outline {
+  @apply border border-f1-navy text-f1-navy hover:bg-f1-navy hover:text-white;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 rounded-full;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full hover:bg-gray-400 transition-colors;
+}
+
+/* Improved focus styles */
+:focus-visible {
+  @apply outline-none ring-2 ring-f1-orange ring-offset-2;
+}
