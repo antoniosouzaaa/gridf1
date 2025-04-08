@@ -8,22 +8,23 @@
     <meta name="author" content="Antonio" />
 
     <meta property="og:title" content="Grid F1" />
-    <meta property="og:description" content="O seu portal de noticias" />
+    <meta property="og:description" content="O seu portal de notícias" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@lovable_dev" />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-    <link href="/antonio/config.yml" type="text/yaml" rel="cms-config-url">
 
+    <!-- Indica onde está o config.yml do CMS -->
+    <link href="/antonio/config.yml" type="text/yaml" rel="cms-config-url" />
   </head>
 
   <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
+    <!-- Container onde o Netlify CMS monta o painel -->
+    <div id="nc-root"></div>
+
+    <!-- Scripts do CMS -->
     <script src="https://unpkg.com/netlify-cms@^2.10.0/dist/netlify-cms.js"></script>
   </body>
 </html>
